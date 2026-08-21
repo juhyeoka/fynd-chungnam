@@ -15,6 +15,10 @@ menuToggle?.addEventListener("click", () => {
   setMenu(menuToggle.getAttribute("aria-expanded") !== "true");
 });
 
+document.querySelector("[data-menu-close]")?.addEventListener("click", () => {
+  setMenu(false);
+});
+
 mobileMenu?.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => setMenu(false));
 });
