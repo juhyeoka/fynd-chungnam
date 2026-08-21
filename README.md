@@ -10,6 +10,14 @@ python3 -m http.server 8000
 
 브라우저에서 `http://localhost:8000`을 엽니다.
 
+## 페이지 구성
+
+- `/about.html` — FYND 소개
+- `/services.html` — 하는 일
+- `/process.html` — 진행 방식
+- `/faq.html` — 자주 묻는 질문
+- `/contact.html` — 문의
+
 ## 배포
 
 `render.yaml`이 포함되어 있어 Render Static Site로 배포할 수 있습니다.
