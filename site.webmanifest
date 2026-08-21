@@ -1,0 +1,11 @@
+{
+  "name": "FYND | 충남 소상공인 마케팅",
+  "short_name": "FYND",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f1efe9",
+  "theme_color": "#101114",
+  "icons": [
+    {"src": "/assets/brand/fynd-favicon.svg", "sizes": "any", "type": "image/svg+xml"}
+  ]
+}
