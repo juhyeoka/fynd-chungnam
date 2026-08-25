@@ -48,13 +48,14 @@ document.querySelector("[data-inquiry-form]")?.addEventListener("submit", (event
   const form = event.currentTarget;
   const data = new FormData(form);
   const services = data.getAll("service");
-  const subject = `[FYND 상담] ${data.get("name") || "새 문의"}`;
+  const subject = `[FYND 참여 문의] ${data.get("name") || "새 문의"}`;
   const lines = [
-    `이름 또는 상호: ${data.get("name") || ""}`,
+    `상호 또는 담당자: ${data.get("name") || ""}`,
+    `지역·업종: ${data.get("region") || ""}`,
     `연락처: ${data.get("contact") || ""}`,
-    `관심 항목: ${services.length ? services.join(", ") : "선택하지 않음"}`,
+    `희망 참여 방식: ${services.length ? services.join(", ") : "선택하지 않음"}`,
     "",
-    "현재 고민:",
+    "가게와 상품 소개:",
     data.get("message") || ""
   ];
 
