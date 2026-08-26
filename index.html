@@ -3,29 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FYND | 지역 소상공인 공동 발견 네트워크</title>
-  <meta name="description" content="FYND는 충남의 버스와 가게, 배송 상자에 놓인 QR로 지역의 식당, 카페, 학원, 농가를 새로운 손님에게 소개합니다.">
-  <meta name="keywords" content="FYND, 파인드, 충남 소상공인, 지역 브랜드, 로컬 브랜드, 소상공인 네트워크, QR 홍보, 충남 가게">
+  <title>FYND | 충남 소상공인 발견 네트워크</title>
+  <meta name="description" content="FYND는 충남의 소상공인이 서로의 고객 접점을 나누고, 새로운 손님에게 발견되도록 연결하는 지역 네트워크입니다.">
+  <meta name="keywords" content="FYND, 파인드, 충남 소상공인, 소상공인 네트워크, 지역 브랜드, 충남 가게">
   <meta name="author" content="FYND">
   <meta name="naver-site-verification" content="a410cf2079ae8f0438905a69bc47c2e9c1e041fb">
-  <meta name="theme-color" content="#111111">
+  <meta name="theme-color" content="#080808">
   <link rel="canonical" href="https://fynd-chungnam.onrender.com/">
   <link rel="icon" href="/assets/brand/fynd-favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css?v=network-3">
+  <link rel="stylesheet" href="/styles.css?v=company-noir-1">
+  <link rel="stylesheet" href="/corporate-home.css?v=company-noir-1">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ko_KR">
   <meta property="og:site_name" content="FYND">
-  <meta property="og:title" content="FYND | 지역 소상공인 공동 발견 네트워크">
-  <meta property="og:description" content="충남의 좋은 가게를 일상 곳곳에서 만나는 지역 네트워크.">
+  <meta property="og:title" content="FYND | 충남 소상공인 발견 네트워크">
+  <meta property="og:description" content="한 가게를 찾은 손님이 다음 가게를 발견하도록, 충남의 소상공인을 연결합니다.">
   <meta property="og:url" content="https://fynd-chungnam.onrender.com/">
   <meta property="og:image" content="https://fynd-chungnam.onrender.com/assets/images/fynd-og.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="FYND 지역 소상공인 공동 발견 네트워크">
+  <meta property="og:image:alt" content="FYND 충남 소상공인 발견 네트워크">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">
   {
@@ -35,129 +36,163 @@
     "alternateName": "파인드",
     "url": "https://fynd-chungnam.onrender.com/",
     "logo": "https://fynd-chungnam.onrender.com/assets/brand/fynd-logo.png",
-    "description": "충남의 소상공인을 버스, 매장, 배송 상품의 오프라인 접점으로 연결하는 공동 발견 네트워크",
+    "description": "충남 소상공인이 고객 접점을 공유하는 지역 발견 네트워크",
     "areaServed": {"@type": "AdministrativeArea", "name": "충청남도"},
     "email": "fyndcom@gmail.com"
   }
   </script>
 </head>
-<body class="home-page">
+<body class="corporate-v3">
   <a class="skip-link" href="#main">본문으로 바로가기</a>
-  <header class="site-header" data-header>
-    <a class="brand" href="/" aria-label="FYND 홈"><img src="/assets/brand/fynd-logo.png" alt="FYND"></a>
-    <nav class="desktop-nav" aria-label="주요 메뉴">
-      <a href="/about.html">FYND 소개</a>
-      <a href="/services.html">발견 네트워크</a>
-      <a href="/process.html">참여 방식</a>
-      <a href="/faq.html">자주 묻는 질문</a>
+
+  <header class="cv3-header" data-header>
+    <a class="cv3-logo" href="#top" aria-label="FYND 홈">
+      <img src="/assets/brand/fynd-logo.png" alt="FYND">
+    </a>
+    <nav class="cv3-nav" aria-label="주요 메뉴">
+      <a href="#about">FYND</a>
+      <a href="#network">발견 방식</a>
+      <a href="#join">참여 안내</a>
+      <a href="#faq">자주 묻는 질문</a>
     </nav>
-    <a class="header-contact" href="/contact.html">가입 문의</a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu" data-menu-toggle><span></span><span></span><i class="sr-only">메뉴 열기</i></button>
+    <a class="cv3-contact-link" href="#contact">참여 문의</a>
+    <button class="cv3-menu-button" type="button" aria-expanded="false" aria-controls="mobileMenu" data-menu-toggle>
+      <span></span><span></span><i class="sr-only">메뉴 열기</i>
+    </button>
   </header>
 
-  <nav class="mobile-menu" id="mobileMenu" aria-label="모바일 메뉴" data-mobile-menu>
-    <div class="mobile-menu-top"><img src="/assets/brand/fynd-logo.png" alt="FYND"><button type="button" data-menu-close>닫기</button></div>
-    <div class="mobile-menu-links">
-      <a href="/about.html"><span>01</span>FYND 소개</a>
-      <a href="/services.html"><span>02</span>발견 네트워크</a>
-      <a href="/process.html"><span>03</span>참여 방식</a>
-      <a href="/faq.html"><span>04</span>자주 묻는 질문</a>
-      <a href="/contact.html"><span>05</span>가입 문의</a>
+  <nav class="cv3-mobile-menu" id="mobileMenu" aria-label="모바일 메뉴" data-mobile-menu>
+    <div class="cv3-mobile-head">
+      <img src="/assets/brand/fynd-logo.png" alt="FYND">
+      <button type="button" data-menu-close>닫기</button>
     </div>
-    <a class="mobile-mail" href="mailto:fyndcom@gmail.com">fyndcom@gmail.com</a>
+    <a href="#about">FYND 소개</a>
+    <a href="#network">발견 방식</a>
+    <a href="#join">참여 안내</a>
+    <a href="#faq">자주 묻는 질문</a>
+    <a href="#contact">참여 문의</a>
   </nav>
 
   <main id="main">
-    <section class="network-hero">
-      <div class="network-hero-copy">
-        <p class="eyebrow">LOCAL DISCOVERY NETWORK</p>
-        <h1><span>좋은 가게는 많습니다.</span><span>아직 모르는 사람이</span><em>더 많을 뿐입니다.</em></h1>
-        <p>FYND는 충남의 버스와 가게, 배송 상자에 QR을 놓습니다. QR 하나가 식당과 카페, 학원과 농가를 다음 손님에게 소개합니다.</p>
-        <div class="hero-actions"><a class="button red" href="/services.html">네트워크 보기</a><a class="button line" href="/contact.html">참여 문의</a></div>
+    <section class="cv3-hero" id="top">
+      <div class="cv3-hero-photo" aria-hidden="true">
+        <img src="/assets/images/fynd-hero-local-shop.jpg" alt="">
       </div>
-      <div class="network-map" aria-label="FYND 발견 네트워크 구성">
-        <span class="network-orbit orbit-one"></span><span class="network-orbit orbit-two"></span>
-        <div class="network-core"><img src="/assets/brand/fynd-logo.png" alt="FYND"><small>DISCOVERY HUB</small></div>
-        <div class="network-node node-bus"><i>01</i><strong>버스 100대</strong><small>이동 중 발견</small></div>
-        <div class="network-node node-store"><i>02</i><strong>카페·식당</strong><small>매장에서 발견</small></div>
-        <div class="network-node node-life"><i>03</i><strong>학원·숙박</strong><small>생활 속 발견</small></div>
-        <div class="network-node node-box"><i>04</i><strong>배송 상품</strong><small>상자 안에서 발견</small></div>
+      <div class="cv3-hero-shade"></div>
+      <div class="cv3-hero-copy">
+        <p>충남 소상공인 발견 네트워크</p>
+        <h1>한 가게를 찾은 손님이<br><em>다음 가게를 발견합니다.</em></h1>
+        <span>FYND는 충남의 가게와 브랜드가 서로의 고객 접점을 나누는 지역 네트워크입니다.</span>
+        <div class="cv3-hero-actions">
+          <a href="#network">FYND 알아보기</a>
+          <a href="#contact">참여 문의</a>
+        </div>
       </div>
-      <a class="scroll-cue" href="#definition">FYND 알아보기 <span>↓</span></a>
+      <div class="cv3-hero-index" aria-hidden="true"><span>01</span><i></i><small>05</small></div>
     </section>
 
-    <section class="definition" id="definition">
-      <p class="section-no">01 / WHAT IS FYND</p>
-      <div class="definition-statement reveal">
-        <span>광고 지면을 파는 회사가 아닙니다.</span>
-        <h2>내 손님이 다른 가게를 알고,<br>다른 가게의 손님이<br><em>나를 알게 됩니다.</em></h2>
+    <section class="cv3-intro" id="about">
+      <div class="cv3-chapter reveal"><span>01</span><p>FYND</p></div>
+      <div class="cv3-intro-title reveal">
+        <h2>좋은 가게가<br>우연을 기다리지 않도록.</h2>
       </div>
-      <p class="definition-note reveal">참여한 가게는 FYND에 소개되고, 매장이나 배송 상품에는 FYND QR이 놓입니다. 서로의 손님에게 좋은 가게를 소개하는 방식입니다.</p>
+      <div class="cv3-intro-copy reveal">
+        <p>단골에게만 알려졌던 가게도, 동네 안에 머물던 상품도 더 넓은 손님과 만날 수 있어야 합니다.</p>
+        <p>FYND는 참여 사업자의 매장과 상품, 일상의 공간을 하나의 발견망으로 연결합니다.</p>
+      </div>
+      <figure class="cv3-intro-figure reveal">
+        <img src="/assets/images/fynd-field-consulting.jpg" alt="지역 가게 현장에서 이야기를 나누는 모습" loading="lazy">
+      </figure>
     </section>
 
-    <section class="journey-section">
-      <div class="journey-heading reveal">
-        <p class="section-no light">02 / HOW IT WORKS</p>
-        <h2>QR 하나를 보고<br>동네 가게 하나를 알게 됩니다.</h2>
+    <section class="cv3-network" id="network">
+      <div class="cv3-network-head reveal">
+        <div class="cv3-chapter light"><span>02</span><p>발견 방식</p></div>
+        <h2>손님이 머무는 곳에<br>다음 발견을 놓습니다.</h2>
       </div>
-      <ol class="journey-flow">
-        <li class="reveal"><span>1</span><div><small>OFFLINE</small><strong>일상의 접점</strong><p>버스를 타거나 가게를 방문하고, 주문한 상품을 받습니다.</p></div></li>
-        <li class="reveal"><span>2</span><div><small>QR</small><strong>FYND를 만남</strong><p>좌석, 계산대, 안내판, 배송 카드에서 FYND QR을 봅니다.</p></div></li>
-        <li class="reveal"><span>3</span><div><small>DISCOVER</small><strong>지역 브랜드 발견</strong><p>가까운 가게와 상품, 축제를 둘러보고 공식 채널로 이동합니다.</p></div></li>
+      <div class="cv3-touchpoints">
+        <article class="cv3-touchpoint cv3-touchpoint-main reveal">
+          <img src="/assets/images/fynd-content-production.jpg" alt="매장에서 브랜드 콘텐츠를 만드는 모습" loading="lazy">
+          <div><span>매장</span><h3>계산대와 테이블의 QR</h3><p>기다리거나 쉬는 짧은 시간에 가까운 가게와 상품을 둘러봅니다.</p></div>
+        </article>
+        <article class="cv3-touchpoint reveal">
+          <div class="cv3-touchpoint-art art-package"><i></i><i></i><i></i></div>
+          <div><span>배송</span><h3>상자 속 한 장의 안내</h3><p>상품을 받은 순간, 같은 지역의 다른 이야기가 함께 도착합니다.</p></div>
+        </article>
+        <article class="cv3-touchpoint reveal">
+          <div class="cv3-touchpoint-art art-place"><b>FYND</b><i></i></div>
+          <div><span>생활 공간</span><h3>자주 가는 곳에서 만나는 QR</h3><p>카페, 식당, 학원, 숙박 공간이 새로운 발견의 입구가 됩니다.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cv3-flow">
+      <div class="cv3-chapter reveal"><span>03</span><p>연결 과정</p></div>
+      <div class="cv3-flow-title reveal">
+        <h2>한곳에서 시작해<br>다음 가게로 이어집니다.</h2>
+      </div>
+      <ol class="cv3-flow-list">
+        <li class="reveal"><span>01</span><strong>QR을 만납니다</strong><p>매장과 상품, 생활 공간에서 FYND를 발견합니다.</p></li>
+        <li class="reveal"><span>02</span><strong>가게를 둘러봅니다</strong><p>가게의 분위기와 대표 상품을 한눈에 확인합니다.</p></li>
+        <li class="reveal"><span>03</span><strong>공식 채널로 갑니다</strong><p>예약, 주문, 방문이 가능한 판매 채널로 바로 연결됩니다.</p></li>
       </ol>
     </section>
 
-    <section class="membership-section">
-      <div class="membership-intro reveal"><p class="section-no">03 / MEMBERSHIP</p><h2>소개 페이지보다<br>중요한 건 보이는 곳입니다.</h2></div>
-      <div class="membership-copy reveal">
-        <p>FYND에 참여한 가게는 온라인 소개 페이지뿐 아니라 버스와 참여 매장, 배송 상품의 QR에서도 보입니다. 평소라면 만나기 어려웠던 손님에게 가게를 알릴 수 있습니다.</p>
-        <a class="text-link" href="/process.html">참여 방식 자세히 보기 <span>↗</span></a>
-      </div>
-      <div class="membership-ledger">
-        <article class="reveal"><span>보이는 곳</span><strong>FYND 전체 오프라인 접점</strong><p>버스, 매장, 생활 공간, 배송 상품</p></article>
-        <article class="reveal"><span>소개되는 것</span><strong>가게의 이야기와 대표 상품</strong><p>브랜드 페이지와 공식 판매·예약 채널</p></article>
-        <article class="reveal"><span>더해지는 것</span><strong>내 가게의 고객 접점</strong><p>가입과 함께 네트워크의 새로운 발견 장소가 됩니다.</p></article>
-      </div>
-    </section>
-
-    <section class="anchor-section">
-      <figure class="anchor-photo reveal"><img src="/assets/images/yeongjin-100-bus-network.jpg" alt="FYND의 첫 오프라인 접점인 영진관광 버스" loading="lazy"></figure>
-      <div class="anchor-copy reveal">
-        <p class="section-no light">04 / FIRST INFRASTRUCTURE</p>
-        <h2>처음부터<br>버스 100대에서 시작합니다.</h2>
-        <strong>영진관광 버스 100대</strong>
-        <p>충남 곳곳을 오가는 영진관광 버스 100대가 FYND의 첫 번째 안내 공간입니다. 카페와 식당, 학원, 숙박업체가 참여하면 FYND를 만나는 장소도 자연스럽게 늘어납니다.</p>
+    <section class="cv3-join" id="join">
+      <figure class="cv3-join-image reveal">
+        <img src="/assets/images/fynd-hero-local-shop.jpg" alt="지역의 매장과 상품" loading="lazy">
+      </figure>
+      <div class="cv3-join-copy reveal">
+        <div class="cv3-chapter light"><span>04</span><p>참여 안내</p></div>
+        <h2>소개받는 가게에서<br>소개하는 가게로.</h2>
+        <p>FYND에 참여하면 우리 가게의 소개 페이지가 생깁니다. 동시에 매장이나 배송 접점도 다른 지역 가게를 알리는 작은 안내소가 됩니다.</p>
+        <ul>
+          <li>가게와 대표 상품을 담은 소개 페이지</li>
+          <li>공식 판매·예약·문의 채널 연결</li>
+          <li>FYND 전체 발견 접점에서 함께 소개</li>
+        </ul>
+        <a href="#contact">참여 문의 남기기 <span>↗</span></a>
       </div>
     </section>
 
-    <section class="growth-section">
-      <div class="growth-title reveal"><p class="section-no">05 / NETWORK EFFECT</p><h2>가게가 늘면<br>FYND를 만나는 곳도 늘어납니다.</h2></div>
-      <div class="growth-track reveal" aria-label="FYND 네트워크 확장 과정">
-        <div><span>START</span><strong>버스</strong></div><i>+</i><div><span>SHOP</span><strong>카페·식당</strong></div><i>+</i><div><span>LIFE</span><strong>학원·숙박</strong></div><i>+</i><div><span>DELIVERY</span><strong>지역 상품</strong></div>
+    <section class="cv3-faq" id="faq">
+      <div class="cv3-faq-head reveal">
+        <div class="cv3-chapter"><span>05</span><p>자주 묻는 질문</p></div>
+        <h2>참여 전에<br>많이 묻는 내용입니다.</h2>
       </div>
-      <p class="growth-caption reveal">새로운 가게가 참여할 때마다 QR이 놓이는 장소가 하나씩 늘고, 기존 참여 가게도 더 많은 곳에서 소개됩니다.</p>
-    </section>
-
-    <section class="home-faq">
-      <div class="home-faq-heading reveal"><p class="section-no light">06 / FAQ</p><h2>참여 전에<br>많이 묻는 질문.</h2><a class="text-link light-link" href="/faq.html">질문 전체 보기 <span>↗</span></a></div>
-      <div class="faq-list reveal">
-        <details open><summary>FYND는 광고대행사인가요?</summary><p>광고를 대신 집행하는 회사는 아닙니다. 참여 가게의 매장과 배송 상품에 FYND QR을 놓고, 서로의 손님에게 가게를 소개합니다.</p></details>
-        <details><summary>가입하면 어디에 소개되나요?</summary><p>FYND의 가게 소개 페이지와 영진관광 버스, 참여 매장, 배송 상품의 QR에서 소개됩니다.</p></details>
-        <details><summary>가게에도 FYND QR을 두어야 하나요?</summary><p>네. 계산대나 테이블, 대기 공간처럼 손님이 자연스럽게 볼 수 있는 곳에 둡니다. 설치 위치는 가게 상황에 맞춰 정합니다.</p></details>
+      <div class="cv3-faq-list reveal">
+        <details open><summary>FYND는 광고대행사인가요?</summary><p>광고비를 받아 매체를 대신 집행하는 서비스와는 다릅니다. 참여 가게가 서로의 고객 접점을 나누고, FYND가 그 사이의 소개 페이지와 QR 연결을 운영합니다.</p></details>
+        <details><summary>참여하면 무엇이 만들어지나요?</summary><p>가게 이야기와 대표 상품, 사진, 공식 판매 채널을 담은 소개 페이지를 제작합니다. FYND QR을 통해 해당 페이지로 연결합니다.</p></details>
+        <details><summary>어떤 업종이 참여할 수 있나요?</summary><p>충남에서 운영하는 식당, 카페, 학원, 숙박업체, 농가, 지역 상품 브랜드 등 손님에게 소개할 이야기와 상품이 있다면 문의할 수 있습니다.</p></details>
+        <details><summary>QR은 어디에 둘 수 있나요?</summary><p>계산대, 테이블, 대기 공간, 안내 데스크, 배송 상자처럼 손님이 자연스럽게 머무는 곳을 함께 정합니다.</p></details>
       </div>
     </section>
 
-    <section class="contact-band">
-      <p class="section-no light">JOIN FYND</p><h2>내 가게도<br>FYND에서 소개하세요.</h2>
-      <div><p>업종과 지역, 연락처를 보내주시면 참여 방법을 안내합니다.</p><a href="/contact.html">가입 문의하기 <span>→</span></a><a href="mailto:fyndcom@gmail.com">fyndcom@gmail.com</a></div>
+    <section class="cv3-contact" id="contact">
+      <div class="cv3-contact-copy reveal">
+        <p>FYND 참여 문의</p>
+        <h2>우리 가게의 다음 손님을<br>함께 찾아보겠습니다.</h2>
+        <span>내용을 남기면 확인 후 연락드립니다.</span>
+      </div>
+      <form class="cv3-form reveal" data-inquiry-form>
+        <label><span>상호 또는 담당자</span><input type="text" name="name" required></label>
+        <label><span>지역 · 업종</span><input type="text" name="region" placeholder="예: 예산 · 카페" required></label>
+        <label><span>연락처</span><input type="tel" name="contact" required></label>
+        <label class="full"><span>궁금한 내용</span><textarea name="message" rows="4" placeholder="가게와 상품을 간단히 알려주세요."></textarea></label>
+        <input type="hidden" name="_subject" value="FYND 참여 문의">
+        <button type="submit">문의 보내기 <span>→</span></button>
+        <p class="cv3-form-status" data-form-status aria-live="polite"></p>
+      </form>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-brand"><img src="/assets/brand/fynd-logo.png" alt="FYND"><p>지역 소상공인 공동 발견 네트워크</p></div>
-    <div class="footer-links"><a href="/about.html">FYND 소개</a><a href="/services.html">발견 네트워크</a><a href="/process.html">참여 방식</a><a href="/faq.html">자주 묻는 질문</a><a href="/contact.html">가입 문의</a></div>
-    <div class="footer-info"><a href="mailto:fyndcom@gmail.com">fyndcom@gmail.com</a><span>CHUNGNAM, KOREA</span><span>© 2026 FYND</span></div>
+  <footer class="cv3-footer">
+    <img src="/assets/brand/fynd-logo.png" alt="FYND">
+    <p>충남 소상공인 발견 네트워크</p>
+    <a href="mailto:fyndcom@gmail.com">fyndcom@gmail.com</a>
+    <span>© 2026 FYND</span>
   </footer>
-  <script src="/app.js?v=network-3" defer></script>
+
+  <script src="/app.js?v=company-noir-1" defer></script>
 </body>
 </html>

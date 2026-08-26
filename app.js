@@ -43,21 +43,40 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
 
-document.querySelector("[data-inquiry-form]")?.addEventListener("submit", (event) => {
+document.querySelector("[data-inquiry-form]")?.addEventListener("submit", async (event) => {
   event.preventDefault();
   const form = event.currentTarget;
   const data = new FormData(form);
-  const services = data.getAll("service");
-  const subject = `[FYND 참여 문의] ${data.get("name") || "새 문의"}`;
-  const lines = [
-    `상호 또는 담당자: ${data.get("name") || ""}`,
-    `지역·업종: ${data.get("region") || ""}`,
-    `연락처: ${data.get("contact") || ""}`,
-    `희망 참여 방식: ${services.length ? services.join(", ") : "선택하지 않음"}`,
-    "",
-    "가게와 상품 소개:",
-    data.get("message") || ""
-  ];
+  const status = form.querySelector("[data-form-status]");
+  const submitButton = form.querySelector("button[type='submit']");
+  const statusBaseClass = status?.className || "";
+  data.append("_captcha", "false");
+  data.append("_template", "table");
 
-  window.location.href = `mailto:fyndcom@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
+  if (status) {
+    status.textContent = "보내는 중입니다.";
+    status.className = statusBaseClass;
+  }
+  if (submitButton) submitButton.disabled = true;
+
+  try {
+    const response = await fetch("https://formsubmit.co/ajax/fyndcom@gmail.com", {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: data
+    });
+    if (!response.ok) throw new Error("submit failed");
+    form.reset();
+    if (status) {
+      status.textContent = "문의가 접수되었습니다. 확인 후 연락드리겠습니다.";
+      status.classList.add("success");
+    }
+  } catch (error) {
+    if (status) {
+      status.textContent = "전송하지 못했습니다. 잠시 후 다시 시도해 주세요.";
+      status.classList.add("error");
+    }
+  } finally {
+    if (submitButton) submitButton.disabled = false;
+  }
 });
