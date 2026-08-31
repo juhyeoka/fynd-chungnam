@@ -54,8 +54,8 @@ body.studio-site.no-scroll, body.studio-site.menu-open { overflow: hidden; }
 .studio-hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(4,5,6,.76), rgba(4,5,6,.28) 46%, rgba(4,5,6,.62)), linear-gradient(0deg, rgba(4,5,6,.5), transparent 52%); }
 .studio-hero-center { position: relative; z-index: 2; display: flex; min-height: 100svh; flex-direction: column; align-items: center; justify-content: center; padding: 130px 24px 100px; text-align: center; }
 .studio-eyebrow { margin: 0 0 24px; color: rgba(255,255,255,.72); font-family: Manrope, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; }
-.studio-hero h1 { margin: 0; font-family: Manrope, sans-serif; font-size: clamp(112px, 18vw, 280px); font-weight: 700; line-height: .78; letter-spacing: -.085em; }
-.studio-tagline { margin: 50px 0 0; font-family: "Noto Serif KR", serif; font-size: clamp(22px, 2.2vw, 35px); font-weight: 500; letter-spacing: -.04em; }
+.studio-hero h1 { margin: 0; font-family: Manrope, sans-serif; font-size: clamp(104px, 17vw, 264px); font-weight: 700; line-height: .9; letter-spacing: .015em; }
+.studio-tagline { margin: 44px 0 0; font-family: "Noto Sans KR", sans-serif; font-size: clamp(22px, 2vw, 32px); font-weight: 700; letter-spacing: -.035em; }
 .studio-hero-next { position: absolute; z-index: 3; bottom: 30px; left: 50%; display: grid; justify-items: center; gap: 12px; color: rgba(255,255,255,.75) !important; font-size: 10px; font-weight: 700; letter-spacing: .14em; transform: translateX(-50%); }
 .studio-hero-next i { width: 1px; height: 42px; background: rgba(255,255,255,.68); }
 
@@ -72,6 +72,8 @@ body.studio-site.no-scroll, body.studio-site.menu-open { overflow: hidden; }
 .studio-intro h2, .studio-section-title h2 { margin: 22px 0 0; font-size: clamp(42px, 5vw, 74px); font-weight: 800; line-height: 1.08; letter-spacing: -.07em; }
 .studio-intro-copy { align-self: end; max-width: 660px; }
 .studio-intro-copy p { margin: 0 0 20px; color: #565656; font-size: 17px; line-height: 1.85; }
+.studio-intro-dark { width: 100%; max-width: none; padding-right: max(48px, calc((100vw - 1320px) / 2)); padding-left: max(48px, calc((100vw - 1320px) / 2)); color: #fff; background: #111214; }
+.studio-intro-dark .studio-intro-copy p { color: #b5b5b5; }
 
 .studio-feature { color: #fff; background: var(--studio-black); }
 .studio-feature-row { display: grid; grid-template-columns: 1.15fr .85fr; min-height: 650px; }
@@ -165,7 +167,7 @@ body.studio-site.no-scroll, body.studio-site.menu-open { overflow: hidden; }
   .studio-header { height: 66px; padding: 0 18px; }
   .studio-brand { width: 104px; }
   .studio-hero-center { padding: 100px 18px 90px; }
-  .studio-hero h1 { font-size: clamp(82px, 28vw, 120px); }
+  .studio-hero h1 { font-size: clamp(76px, 25vw, 108px); line-height: .92; letter-spacing: .01em; }
   .studio-eyebrow { margin-bottom: 20px; font-size: 9px; }
   .studio-tagline { max-width: 290px; margin-top: 36px; font-size: 22px; line-height: 1.5; }
   .studio-page-hero { min-height: 68svh; }
@@ -173,6 +175,7 @@ body.studio-site.no-scroll, body.studio-site.menu-open { overflow: hidden; }
   .studio-page-hero h1 { font-size: clamp(43px, 12vw, 58px); line-height: 1.1; }
   .studio-page-hero-copy > p:last-child { margin-top: 22px; font-size: 14px; line-height: 1.7; }
   .studio-intro { padding: 82px 0; }
+  .studio-intro-dark { padding-right: 18px; padding-left: 18px; }
   .studio-intro h2, .studio-section-title h2 { font-size: 39px; line-height: 1.12; }
   .studio-intro-copy p { font-size: 15px; line-height: 1.75; }
   .studio-feature-row figure { aspect-ratio: 4 / 3; }
