@@ -54,7 +54,7 @@ document.querySelector("[data-inquiry-form]")?.addEventListener("submit", async 
   data.append("_template", "table");
 
   if (status) {
-    status.textContent = "보내는 중입니다.";
+    status.textContent = "보내고 있어요.";
     status.className = statusBaseClass;
   }
   if (submitButton) submitButton.disabled = true;
@@ -68,12 +68,12 @@ document.querySelector("[data-inquiry-form]")?.addEventListener("submit", async 
     if (!response.ok) throw new Error("submit failed");
     form.reset();
     if (status) {
-      status.textContent = "문의가 접수되었습니다. 확인 후 연락드리겠습니다.";
+      status.textContent = "문의가 접수됐어요. 확인 후 연락드릴게요.";
       status.classList.add("success");
     }
   } catch (error) {
     if (status) {
-      status.textContent = "전송하지 못했습니다. 잠시 후 다시 시도해 주세요.";
+      status.textContent = "지금은 전송이 되지 않아요. 잠시 후 다시 보내주세요.";
       status.classList.add("error");
     }
   } finally {
