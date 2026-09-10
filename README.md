@@ -1,6 +1,6 @@
 # FYND
 
-충남 소상공인의 브랜드, 콘텐츠, 검색 노출, 온라인 판매 연결을 돕는 FYND 공식 웹사이트입니다.
+충남 소상공인이 각자의 고객 접점을 나누고, 소비자의 발견과 사업자 협업을 연결하는 FYND 공식 웹사이트입니다.
 
 ## 로컬 실행
 
@@ -14,7 +14,7 @@ python3 -m http.server 8000
 
 - `/about.html` — FYND 소개
 - `/services.html` — 하는 일
-- `/process.html` — 진행 방식
+- `/process.html` — 참여 방식
 - `/faq.html` — 자주 묻는 질문
 - `/contact.html` — 문의
 
@@ -28,5 +28,5 @@ python3 -m http.server 8000
 
 ## 이미지 출처
 
-`assets/images/`의 현장 이미지는 OpenAI 이미지 생성 도구로 이 프로젝트를 위해 제작했습니다.
-FYND 로고는 기존 영진마켓 프로젝트의 원본 로고 파일을 재사용했습니다.
+`assets/images/`의 현장 이미지는 이 프로젝트용으로 제작하거나 FYND 서비스웹의 실제 참여 업체 자료를 재사용했습니다.
+FYND 로고는 기존 FYND 서비스웹의 원본 로고 파일을 활용했습니다.
