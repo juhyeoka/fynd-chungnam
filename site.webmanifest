@@ -3,8 +3,8 @@
   "short_name": "FYND",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f3efe7",
-  "theme_color": "#1e2a38",
+  "background_color": "#f6f6f1",
+  "theme_color": "#174f3b",
   "icons": [
     {"src": "/assets/brand/fynd-favicon.svg", "sizes": "any", "type": "image/svg+xml"}
   ]
