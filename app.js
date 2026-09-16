@@ -1,10 +1,92 @@
 document.documentElement.classList.add("js-ready");
 
 const body = document.body;
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 const siteHeader = document.querySelector("[data-header]");
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const mobileMenu = document.querySelector("[data-mobile-menu]");
 const menuClose = document.querySelector("[data-menu-close]");
+
+const progressBar = document.createElement("div");
+progressBar.className = "scroll-progress";
+progressBar.setAttribute("aria-hidden", "true");
+body.append(progressBar);
+
+if (!reduceMotion) {
+  const pageWipe = document.createElement("div");
+  pageWipe.className = "page-wipe";
+  pageWipe.setAttribute("aria-hidden", "true");
+  body.prepend(pageWipe);
+  pageWipe.addEventListener("animationend", () => pageWipe.remove(), { once: true });
+  window.setTimeout(() => pageWipe.remove(), 1500);
+}
+
+const heroStage = document.querySelector("[data-hero-stage]");
+const cinematicHero = document.querySelector("[data-cinematic-hero]");
+let motionFrame = 0;
+
+function clamp(value, min = 0, max = 1) {
+  return Math.min(Math.max(value, min), max);
+}
+
+function updateCinematicMotion() {
+  motionFrame = 0;
+  const documentTravel = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+  progressBar.style.setProperty("--scroll-progress", String(clamp(window.scrollY / documentTravel)));
+
+  if (!cinematicHero || reduceMotion) return;
+
+  if (heroStage) {
+    const travel = Math.max(heroStage.offsetHeight - window.innerHeight, 1);
+    const progress = clamp((window.scrollY - heroStage.offsetTop) / travel);
+    cinematicHero.style.setProperty("--hero-progress", progress.toFixed(4));
+    return;
+  }
+
+  if (cinematicHero.classList.contains("brand-hero")) {
+    const progress = clamp(window.scrollY / Math.max(cinematicHero.offsetHeight, 1));
+    cinematicHero.style.setProperty("--hero-progress", progress.toFixed(4));
+    return;
+  }
+
+  const progress = clamp(window.scrollY / Math.max(cinematicHero.offsetHeight, 1));
+  cinematicHero.style.setProperty("--page-progress", progress.toFixed(4));
+}
+
+function queueCinematicMotion() {
+  if (motionFrame) return;
+  motionFrame = window.requestAnimationFrame(updateCinematicMotion);
+}
+
+updateCinematicMotion();
+window.addEventListener("scroll", queueCinematicMotion, { passive: true });
+window.addEventListener("resize", queueCinematicMotion, { passive: true });
+
+if (cinematicHero && finePointer && !reduceMotion) {
+  cinematicHero.addEventListener("pointermove", (event) => {
+    const bounds = cinematicHero.getBoundingClientRect();
+    const x = clamp((event.clientX - bounds.left) / bounds.width) * 100;
+    const y = clamp((event.clientY - bounds.top) / bounds.height) * 100;
+    cinematicHero.style.setProperty("--spot-x", `${x.toFixed(2)}%`);
+    cinematicHero.style.setProperty("--spot-y", `${y.toFixed(2)}%`);
+  });
+}
+
+const tiltSurface = document.querySelector("[data-tilt]");
+if (tiltSurface && finePointer && !reduceMotion) {
+  tiltSurface.addEventListener("pointermove", (event) => {
+    const bounds = tiltSurface.getBoundingClientRect();
+    const x = clamp((event.clientX - bounds.left) / bounds.width, 0, 1) - .5;
+    const y = clamp((event.clientY - bounds.top) / bounds.height, 0, 1) - .5;
+    tiltSurface.style.setProperty("--tilt-x", `${(-y * 7).toFixed(2)}deg`);
+    tiltSurface.style.setProperty("--tilt-y", `${(x * 9).toFixed(2)}deg`);
+  });
+  tiltSurface.addEventListener("pointerleave", () => {
+    tiltSurface.style.setProperty("--tilt-x", "0deg");
+    tiltSurface.style.setProperty("--tilt-y", "0deg");
+  });
+}
 
 function updateHeader() {
   siteHeader?.classList.toggle("is-scrolled", window.scrollY > 24);
@@ -15,7 +97,7 @@ window.addEventListener("scroll", updateHeader, { passive: true });
 
 const homeSections = [...document.querySelectorAll(".page-home main > section:not(.brand-hero)")];
 
-if (homeSections.length && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+if (homeSections.length && "IntersectionObserver" in window && !reduceMotion) {
   const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
@@ -68,7 +150,6 @@ document.addEventListener("keydown", (event) => {
 
 const countGroup = document.querySelector("[data-count-group]");
 const countItems = [...document.querySelectorAll("[data-count]")];
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function writeCount(element, value) {
   element.textContent = new Intl.NumberFormat("ko-KR").format(value);
