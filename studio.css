@@ -475,6 +475,7 @@ body.studio-site.menu-open { overflow: hidden; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; }
   .brand-hero-media, .brand-hero-content, .page-hero-image, .page-hero-image img, .page-hero-copy, .phone-shell { transform: none !important; opacity: 1 !important; clip-path: none !important; }
   .page-wipe, .scroll-progress { display: none; }
 }
