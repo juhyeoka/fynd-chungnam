@@ -1,22 +1,69 @@
+document.documentElement.classList.add("js-ready");
+
 const body = document.body;
+const siteHeader = document.querySelector("[data-header]");
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const mobileMenu = document.querySelector("[data-mobile-menu]");
+const menuClose = document.querySelector("[data-menu-close]");
 
-function setMenu(open) {
+function updateHeader() {
+  siteHeader?.classList.toggle("is-scrolled", window.scrollY > 24);
+}
+
+updateHeader();
+window.addEventListener("scroll", updateHeader, { passive: true });
+
+const homeSections = [...document.querySelectorAll(".page-home main > section:not(.brand-hero)")];
+
+if (homeSections.length && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      sectionObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.16 });
+  homeSections.forEach((section) => sectionObserver.observe(section));
+} else {
+  homeSections.forEach((section) => section.classList.add("is-visible"));
+}
+
+function setMenu(open, restoreFocus = true) {
   if (!menuToggle || !mobileMenu) return;
   menuToggle.setAttribute("aria-expanded", String(open));
+  mobileMenu.setAttribute("aria-hidden", String(!open));
   mobileMenu.classList.toggle("is-open", open);
   body.classList.toggle("menu-open", open);
+  if (open) {
+    requestAnimationFrame(() => menuClose?.focus());
+  } else if (restoreFocus) {
+    menuToggle.focus();
+  }
 }
 
 menuToggle?.addEventListener("click", () => {
   setMenu(menuToggle.getAttribute("aria-expanded") !== "true");
 });
 
-document.querySelector("[data-menu-close]")?.addEventListener("click", () => setMenu(false));
-mobileMenu?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenu(false)));
+menuClose?.addEventListener("click", () => setMenu(false));
+mobileMenu?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenu(false, false)));
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") setMenu(false);
+  if (menuToggle?.getAttribute("aria-expanded") !== "true") return;
+  if (event.key === "Escape") {
+    setMenu(false);
+    return;
+  }
+  if (event.key !== "Tab" || !mobileMenu) return;
+  const focusable = [...mobileMenu.querySelectorAll("a[href], button:not([disabled])")];
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last?.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first?.focus();
+  }
 });
 
 const countGroup = document.querySelector("[data-count-group]");

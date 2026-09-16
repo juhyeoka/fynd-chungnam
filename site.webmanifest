@@ -1,10 +1,10 @@
 {
-  "name": "FYND | 지역 소상공인 공동 발견 네트워크",
+  "name": "FYND | 충남의 좋은 가게를 찾습니다",
   "short_name": "FYND",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f6f6f1",
-  "theme_color": "#07090c",
+  "background_color": "#070809",
+  "theme_color": "#070809",
   "icons": [
     {"src": "/assets/brand/fynd-favicon.svg", "sizes": "any", "type": "image/svg+xml"}
   ]
