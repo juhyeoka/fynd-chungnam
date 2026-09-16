@@ -6,6 +6,6 @@
   "background_color": "#070809",
   "theme_color": "#070809",
   "icons": [
-    {"src": "/assets/brand/fynd-favicon.svg", "sizes": "any", "type": "image/svg+xml"}
+    {"src": "/assets/brand/fynd-favicon.svg?v=2", "sizes": "any", "type": "image/svg+xml"}
   ]
 }

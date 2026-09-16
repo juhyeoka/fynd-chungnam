@@ -88,6 +88,32 @@ if (tiltSurface && finePointer && !reduceMotion) {
   });
 }
 
+if (finePointer && !reduceMotion) {
+  document.querySelectorAll(".button, .header-contact").forEach((target) => {
+    target.addEventListener("pointermove", (event) => {
+      const bounds = target.getBoundingClientRect();
+      const x = ((event.clientX - bounds.left) / bounds.width - .5) * 8;
+      const y = ((event.clientY - bounds.top) / bounds.height - .5) * 6;
+      target.style.setProperty("--magnetic-x", `${x.toFixed(2)}px`);
+      target.style.setProperty("--magnetic-y", `${y.toFixed(2)}px`);
+    });
+    target.addEventListener("pointerleave", () => {
+      target.style.setProperty("--magnetic-x", "0px");
+      target.style.setProperty("--magnetic-y", "0px");
+    });
+  });
+
+  document.querySelectorAll(".demo-section, .member-section, .home-faq").forEach((section) => {
+    section.addEventListener("pointermove", (event) => {
+      const bounds = section.getBoundingClientRect();
+      const x = clamp((event.clientX - bounds.left) / bounds.width) * 100;
+      const y = clamp((event.clientY - bounds.top) / bounds.height) * 100;
+      section.style.setProperty("--section-x", `${x.toFixed(2)}%`);
+      section.style.setProperty("--section-y", `${y.toFixed(2)}%`);
+    });
+  });
+}
+
 function updateHeader() {
   siteHeader?.classList.toggle("is-scrolled", window.scrollY > 24);
 }
@@ -95,9 +121,9 @@ function updateHeader() {
 updateHeader();
 window.addEventListener("scroll", updateHeader, { passive: true });
 
-const homeSections = [...document.querySelectorAll(".page-home main > section:not(.brand-hero)")];
+const revealSections = [...document.querySelectorAll("main > section:not(.brand-hero):not(.page-hero)")];
 
-if (homeSections.length && "IntersectionObserver" in window && !reduceMotion) {
+if (revealSections.length && "IntersectionObserver" in window && !reduceMotion) {
   const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
@@ -105,9 +131,9 @@ if (homeSections.length && "IntersectionObserver" in window && !reduceMotion) {
       sectionObserver.unobserve(entry.target);
     });
   }, { threshold: 0.16 });
-  homeSections.forEach((section) => sectionObserver.observe(section));
+  revealSections.forEach((section) => sectionObserver.observe(section));
 } else {
-  homeSections.forEach((section) => section.classList.add("is-visible"));
+  revealSections.forEach((section) => section.classList.add("is-visible"));
 }
 
 function setMenu(open, restoreFocus = true) {
